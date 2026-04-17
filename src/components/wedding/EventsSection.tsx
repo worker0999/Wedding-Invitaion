@@ -7,7 +7,7 @@ const events = [
     label: "The Nikkah",
     date: "10 // 05 // 2026",
     time: "10:30 AM – 12:00 PM",
-    venue: "Star Community Mahal",
+    venue: "SVR Heritage Hall",
     address: "Byepass Road, Uthamapalayam",
     mapUrl: "https://share.google/atuXH1pCnzn7KqkyC",
     description: "The sacred ceremony uniting two souls in the bond of Nikkah",
