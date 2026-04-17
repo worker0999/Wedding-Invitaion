@@ -2,6 +2,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 
+const RSVP_CONTACTS = [
+  { name: "Contact 1 (+91 97418 93011)", phone: "+919741893011" },
+  { name: "Contact 2 (+91 81248 15162)", phone: "+918124815162" },
+  { name: "Contact 3 (+91 98940 78516)", phone: "+919894078516" },
+];
+
 const RsvpSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,17 +15,24 @@ const RsvpSection = () => {
     attending: "",
     guests: "1",
     message: "",
+    contactIndex: "0",
   });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.attending) {
+    if (!formData.name || !formData.attending) {
       toast.error("Please fill in all required fields.");
       return;
     }
+
+    const contact = RSVP_CONTACTS[parseInt(formData.contactIndex)];
+    const text = `*Wedding RSVP*%0A%0A*Name:* ${formData.name}%0A*Attending:* ${formData.attending === 'yes' ? 'In Sha Allah, I will attend' : 'Regretfully unable to attend'}%0A*Guests:* ${formData.guests}%0A*Message:* ${formData.message || 'No additional message'}`;
+    
+    window.open(`https://wa.me/${contact.phone}?text=${text}`, "_blank");
+
     setSubmitted(true);
-    toast.success("JazakAllahu Khairan! Your RSVP has been received.");
+    toast.success("JazakAllahu Khairan! Your RSVP has been sent via WhatsApp.");
   };
 
   const handleChange = (
@@ -114,17 +127,21 @@ const RsvpSection = () => {
             />
           </div>
 
+
+
           <div>
-            <label className="label-caps block mb-2">Email Address *</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
+            <label className="label-caps block mb-2">RSVP To *</label>
+            <select
+              name="contactIndex"
+              value={formData.contactIndex}
               onChange={handleChange}
-              className="input-underline w-full"
-              placeholder="your@email.com"
+              className="input-underline w-full cursor-pointer"
               required
-            />
+            >
+              {RSVP_CONTACTS.map((contact, index) => (
+                <option key={index} value={index}>{contact.name}</option>
+              ))}
+            </select>
           </div>
 
           <div>
@@ -172,8 +189,8 @@ const RsvpSection = () => {
           </div>
 
           <div className="pt-4">
-            <button type="submit" className="btn-primary w-full rounded-lg">
-              Send RSVP
+            <button type="submit" className="btn-primary w-full rounded-lg flex items-center justify-center gap-2">
+              <span className="text-lg">✉</span> Send RSVP via WhatsApp
             </button>
           </div>
         </motion.form>

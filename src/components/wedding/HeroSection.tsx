@@ -62,28 +62,28 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.35, ease: [0.2, 0, 0, 1] }}
-          className="display-hero text-white drop-shadow-xl shadow-black/50"
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.4, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          className="display-hero text-gradient-platinum text-glow-platinum py-2 filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
         >
-          Ajith khan
+          Ajith Khan
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: [0.2, 0, 0, 1] }}
-          className="font-display text-2xl md:text-3xl text-white/90 italic my-3 drop-shadow-md"
+          initial={{ opacity: 0, rotate: -15, scale: 0.8 }}
+          animate={{ opacity: 1, rotate: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+          className="font-display text-4xl md:text-5xl text-[#E5E4E2]/90 italic my-6 drop-shadow-lg select-none"
         >
           &
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.55, ease: [0.2, 0, 0, 1] }}
-          className="display-hero text-white drop-shadow-xl shadow-black/50"
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.4, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="display-hero text-gradient-platinum text-glow-platinum py-2 filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
         >
           Afrin Fathima
         </motion.h1>
@@ -97,12 +97,24 @@ const HeroSection = () => {
         className="relative z-10 text-center mt-12"
       >
         <p className="label-caps text-primary-foreground/80 mb-3 tracking-[0.2em]">Save the Date</p>
-        <p className="font-display text-xl md:text-2xl text-primary-foreground tracking-wide font-light drop-shadow-md">
-          Sunday, the Tenth of May
-        </p>
-        <p className="font-body text-sm text-primary-foreground/70 mt-1 tabular-nums">
-          Two Thousand and Twenty-Six · 23 Dhul Ka'dha 1448
-        </p>
+        <div className="flex flex-col items-center">
+          <motion.p 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="font-display text-5xl md:text-8xl text-gradient-platinum text-glow-platinum tracking-[0.05em] font-medium mb-6"
+          >
+            10 // 05 // 2026
+          </motion.p>
+          
+          <div className="flex items-center gap-4 w-full justify-center">
+            <div className="h-px w-8 md:w-16 bg-gradient-to-r from-transparent to-[#E5E4E2]/50" />
+            <p className="font-body text-sm md:text-base text-primary-foreground/90 tabular-nums tracking-[0.3em] uppercase font-light">
+              Sunday · 23 Dhul-Qi'dah 1447 AH
+            </p>
+            <div className="h-px w-8 md:w-16 bg-gradient-to-l from-transparent to-[#E5E4E2]/50" />
+          </div>
+        </div>
 
         {/* Countdown */}
         <div className="flex items-center justify-center gap-4 md:gap-6 mt-6">

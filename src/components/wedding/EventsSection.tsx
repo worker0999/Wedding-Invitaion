@@ -5,11 +5,11 @@ import heroBg from "@/assets/hero-bg.jpg";
 const events = [
   {
     label: "The Nikkah",
-    date: "Sunday, May 10, 2026",
+    date: "10 // 05 // 2026",
     time: "10:30 AM – 12:00 PM",
     venue: "Star Community Mahal",
     address: "Byepass Road, Uthamapalayam",
-    mapUrl: "https://maps.google.com/?q=Star+Community+Mahal+Uthamapalayam",
+    mapUrl: "https://share.google/atuXH1pCnzn7KqkyC",
     description: "The sacred ceremony uniting two souls in the bond of Nikkah",
   },
 ];
@@ -55,7 +55,7 @@ const EventsSection = () => {
           <p className="label-caps text-[#D4AF37] mb-6 tracking-[0.3em]">
             Wedding Event
           </p>
-          <h2 className="display-section text-white text-center mb-4 text-5xl md:text-7xl">
+          <h2 className="display-section text-gradient-platinum text-center mb-4 text-5xl md:text-7xl pb-2">
             Join Us In Celebration
           </h2>
           <div className="flex items-center gap-4 text-[#D4AF37]/60">
@@ -111,7 +111,7 @@ const EventsSection = () => {
                   </div>
                   <div className="text-left">
                     <p className="text-xs text-[#D4AF37]/80 uppercase tracking-widest mb-1.5 font-semibold">Date & Time</p>
-                    <p className="text-sm font-medium text-white/90">{event.date}</p>
+                    <p className="text-lg font-medium text-gradient-platinum">{event.date}</p>
                     <p className="text-sm text-white/70 mt-0.5">{event.time}</p>
                   </div>
                 </div>

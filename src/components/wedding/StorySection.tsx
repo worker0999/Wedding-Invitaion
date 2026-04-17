@@ -62,7 +62,7 @@ const StorySection = () => {
           >
 
             <p className="body-text mb-6">
-              <span className="font-display text-foreground text-lg font-light">J. Mohammed Ajith khan B.E.</span>
+              <span className="font-display text-foreground text-lg font-light">J. Mohammed Ajith Khan B.E.</span>
               <br />
               <span className="text-sm">S/o. M. Syed Abbas, Batlagundu</span>
             </p>
