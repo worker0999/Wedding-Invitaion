@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 
 const RSVP_CONTACTS = [
-  { name: "Contact 1 (+91 97418 93011)", phone: "+919741893011" },
-  { name: "Contact 2 (+91 81248 15162)", phone: "+918124815162" },
   { name: "Contact 3 (+91 98940 78516)", phone: "+919894078516" },
+  { name: "Contact 2 (+91 81248 15162)", phone: "+918124815162" },
+  { name: "Contact 1 (+91 97418 93011)", phone: "+919741893011" },
 ];
 
 const RsvpSection = () => {
